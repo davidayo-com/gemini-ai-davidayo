@@ -1,7 +1,6 @@
 # Gemini-AI-davidayo
 
-![Gemini Logo](assets/gemini-ai-api.png)
-![Davidayo Logo](/assets/logo.png)
+/Users/Daveayo/Desktop/Screen Shot 2024-07-17 at 2.09.15 PM.png
 
 
 
