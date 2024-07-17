@@ -1,6 +1,8 @@
 # Gemini-AI-davidayo
 
 ![Gemini Logo](assets/gemini-ai-api.png)
+![Davidayo Logo](assets/logo.png)
+
 
 
 # Gemini API Quickstart
