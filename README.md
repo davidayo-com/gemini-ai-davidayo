@@ -1,5 +1,8 @@
 # Gemini-AI-davidayo
 
+![Gemini Logo](public/gemini-ai-api.png)
+
+
 # Gemini API Quickstart
 
 This quickstart guide will help you integrate the Gemini API into your web app.
