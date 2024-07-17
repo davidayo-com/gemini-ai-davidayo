@@ -1,6 +1,6 @@
 # Gemini-AI-davidayo
 
-/Users/Daveayo/Desktop/Screen Shot 2024-07-17 at 2.09.15 PM.png
+![screenshot](logo.png)
 
 
 
