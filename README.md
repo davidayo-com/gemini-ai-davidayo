@@ -1,4 +1,4 @@
-# gemini-ai-davidayo
+# Gemini-AI-davidayo
 
 # Gemini API Quickstart
 
@@ -17,7 +17,7 @@ This guide assumes that you're familiar with using JavaScript to develop web app
 
 To use the Gemini API, you'll need an API key. If you don't already have one, create a key in Google AI Studio.
 
-[Get an API key](https://ai.google.com/studio)
+[Get an API key](https://aistudio.google.com/app/apikey)
 
 Then configure your key.
 
@@ -37,4 +37,39 @@ To use the Gemini API in your own web app, import `@google/generative-ai`:
     }
   }
 </script>
+
+Initialize the model
+Before you can make any API calls, you need to import and initialize the model. Gemini 1.5 models are versatile and work with both text-only and multimodal prompts.
+
+
+<html>
+<body>
+  <!-- ... Your HTML and CSS -->
+  <!-- Import @google/generative-ai, as shown above. -->
+  <script type="module">
+      import { GoogleGenerativeAI } from "@google/generative-ai";
+
+      // Fetch your API_KEY
+      const API_KEY = "...";
+
+      // Access your API key (see "Set up your API key" above)
+      const genAI = new GoogleGenerativeAI(API_KEY);
+
+      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
+  </script>
+</body>
+</html>
+
+Generate text
+
+async function run() {
+  const prompt = "Write a story about a AI and magic"
+
+  const result = await model.generateContent(prompt);
+  const response = await result.response;
+  const text = response.text();
+  console.log(text);
+}
+
+run();
 
