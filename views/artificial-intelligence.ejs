@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chrome AI</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script type="importmap">
+        {
+      "imports": {
+        "@google/generative-ai": "https://esm.run/@google/generative-ai"
+      }
+    }
+  </script>
+</head>
+
+<body>
+    <main>
+        <h1>Gemini Ai API</h1>
+        <div>
+            <input type="text" id="user-prompt"
+                placeholder="Enter your prompt here: example (Write a story about a magic backpack.)"
+                value="Write a story about a magic backpack.">
+            <button id="submit-button">Send Prompt</button>
+        </div>
+        <div id="result"></div>
+    </main>
+
+    <script type="module">
+        import {
+      GoogleGenerativeAI
+    } from "@google/generative-ai";
+
+    const API_KEY = "AIzaSyA7oa-3HzDdUXwpcaVbjY8k09a7tDbhh7U";
+    // Access your API key (see "Set up your API key" above)
+    const genAI = new GoogleGenerativeAI(API_KEY);
+
+    const userInput = document.getElementById("user-prompt");
+    const submitButton = document.getElementById("submit-button");
+    const responseDiv = document.getElementById("result");
+    const loadingIndicator = document.createElement("div");
+
+    loadingIndicator.classList.add("loading");
+
+    submitButton.addEventListener("click", async () => {
+      const prompt = userInput.value;
+
+      responseDiv.appendChild(loadingIndicator);
+      const response = await makeRequestToAiApi(prompt);
+
+      responseDiv.removeChild(loadingIndicator);
+
+      if (response) {
+        const htmlContent = marked.parse(response);
+        responseDiv.innerHTML = htmlContent;
+      } else {
+        responseDiv.textContent = "No response received from AI API.";
+      }
+      console.log(response);
+    });
+
+    async function makeRequestToAiApi(prompt) {
+      try {
+        const model = genAI.getGenerativeModel({
+          model: "gemini-1.5-flash"
+        });
+        console.log("prompt", prompt)
+        const result = await model.generateContent(prompt);
+        const response = await result.response;
+        const text = response.text();
+
+        return text;
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    }
+  </script>
+</body>
+
+</html>
