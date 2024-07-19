@@ -1,4 +1,4 @@
-# Gemini-AI-davidayo
+# Gemini Davidayo AI
 
 ![screenshot](logo.png)
 
