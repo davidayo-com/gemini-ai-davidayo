@@ -8,6 +8,10 @@
 
 This quickstart guide will help you integrate the Gemini API into your web app.
 
+## Introduction
+Welcome to the project! For more information and resources, [visit Davidayo](https://www.davidayo.com/).
+
+
 ## Prerequisites
 
 This guide assumes that you're familiar with using JavaScript to develop web apps. It is framework-independent.
@@ -77,4 +81,3 @@ async function run() {
 
 run();
 
-You can find such AI here: Visit [Davidayo](https://www.davidayo.com/)
