@@ -9,7 +9,7 @@
 This quickstart guide will help you integrate the Gemini API into your web app.
 
 ## Introduction
-Welcome to the project! For more information and resources, [visit Davidayo](https://www.davidayo.com/).
+Welcome to the project! For more information and resources, Visit [Davidayo](https://www.davidayo.com/).
 
 
 ## Prerequisites
